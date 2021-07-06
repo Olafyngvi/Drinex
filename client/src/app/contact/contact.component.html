@@ -1,0 +1,73 @@
+<div class="container contact-form">
+  <div class="contact-image">
+      <img src="../../assets/images/mail.png" alt="rocket_contact"/>
+  </div>
+  <form (ngSubmit)="onSubmit(rteForm)" #rteForm="ngForm">
+      <h3>POŠALJI PORUKU</h3>
+     <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                <i class="fa fa-user"></i>
+                  <input
+                  type="text"
+                  required
+                  #Name="ngModel"
+                  [ngClass]="{'is-invalid': Name.errors && Name.touched}"
+                  name="txtName"
+                  id="txtName"
+                  [(ngModel)]="contact.name"
+                  class="form-control"
+                  placeholder="Ime *"
+                  value="" />
+              </div>
+              <div class="form-group">
+                <i class="fa fa-at"></i>
+                  <input
+                  type="text"
+                  required
+                  name="txtEmail"
+                  id="txtEmail"
+                  #Mail="ngModel"
+                  [ngClass]="{'is-invalid': Mail.errors && Mail.touched}"
+                  [(ngModel)]="contact.mail"
+                  class="form-control"
+                  placeholder="E-mail *"
+                  value="" />
+              </div>
+              <div class="form-group">
+                <i class="fa fa-phone"></i>
+                  <input
+                  type="text"
+                  required
+                  #Phone="ngModel"
+                  name="txtPhone"
+                  [ngClass]="{'is-invalid': Phone.errors && Phone.touched}"
+                  id="txtPhone"
+                  [(ngModel)]="contact.phoneNumber"
+                  class="form-control"
+                  placeholder= "Telefon *"
+                  value="" />
+              </div>
+              <div class="form-group">
+                  <input [disabled]="rteForm.invalid" type="submit" name="btnSubmit" class="btnContact" value="POŠALJI" />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <textarea
+                  required
+                  name="txtMsg"
+                  #Msg="ngModel"
+                  [ngClass]="{'is-invalid': Msg.errors && Msg.touched}"
+                  id="txtMsg"
+                  [(ngModel)]="contact.message"
+                  class="form-control"
+                  placeholder="Poruka *"
+                  style="width: 100%; height: 150px; max-height: 150px;">
+                </textarea>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+

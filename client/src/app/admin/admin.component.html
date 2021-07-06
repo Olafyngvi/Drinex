@@ -1,0 +1,140 @@
+<section class="admin-page" *ngIf="products">
+  <div class="container/fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <ng-container *ngIf="types && brands">
+          <h5 class="text-warning ml-3 mt-3 mb-4">Sortiraj</h5>
+          <select class="custom-select mb-4" (change)="onSortSelected($event.target.value)">
+              <option *ngFor="let sort of sortOptions"
+                  [selected]="shopParams.sort === sort.value"
+                  [value]="sort.value">
+                  {{sort.name}}
+              </option>
+          </select>
+
+          <h5 class="text-warning ml-3">Brend</h5>
+          <ul class="list-group mb-3">
+              <li class="list-group-item" *ngFor="let brand of brands"
+                  [class.active]="brand.id === shopParams.brandId" [value]="brand.id"
+                  (click)="onBrandSelected(brand.id)">
+                  {{brand.name}}
+              </li>
+          </ul>
+          <h5 class="text-warning ml-3">Vrsta</h5>
+          <ul class="list-group my-3">
+              <li class="list-group-item" *ngFor="let type of types"
+                  [class.active]="type.id === shopParams.typeId" [value]="type.id"
+                  (click)="onTypeSelected(type.id)">
+                  {{type.name}}
+              </li>
+          </ul>
+      </ng-container>
+      </div>
+      <div class="col-lg-9">
+        <div class="d-flex justify-content-between my-3">
+          <div class="form-inline" *ngIf="products">
+            <input (keyup.enter)="onSearch()" type="text" class="form-control mr-2" #search placeholder="Pretraga">
+            <button (click)="onSearch()" class="btn btn-outline-primary my-2">Pretraži</button>
+            <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">Poništi filtere</button>
+        </div>
+          <button
+            [routerLink]="['/admin/create']"
+            class="btn btn-outline-success"
+          >
+            Dodaj novi proizvod
+          </button>
+        </div>
+
+        <app-paging-header
+          [totalCount]="totalCount"
+          [pageSize]="this.shopParams.pageSize"
+          [pageNumber]="this.shopParams.pageNumber"
+        ></app-paging-header>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">
+                  <div class="p-2">Id</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 text-uppercase">Proizvod</div>
+                </th>
+                <th scope="col">
+                  <div class="py-2 text-uppercase">Naziv</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 px-3 text-uppercase">Cijena</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 px-3 text-uppercase">Izdvojen</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 px-3 text-uppercase">Novo</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 px-3 text-uppercase">Akcija</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 px-3 text-uppercase">Izmjena</div>
+                </th>
+                <th scope="col">
+                  <div class="p-2 px-3 text-uppercase">Brisanje</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let product of products">
+                <td class="align-middle">{{ product.id }}</td>
+                <td>
+                  <div class="p-2">
+                    <img
+                      src="{{
+                        product.pictureUrl || '/assets/images/placeholder.png'
+                      }}"
+                      alt="{{ product.name }}"
+                      class="img-fluid"
+                      style="max-height: 50px"
+                    />
+                  </div>
+                </td>
+                <th class="align-middle">
+                  <h5>{{ product.name }}</h5>
+                </th>
+                <td class="align-middle">{{ product.price | currency: 'KM':'symbol':undefined:'fr' }}</td>
+                <td class="align-middle"><input class="ml-4" (change)="izdvoji(product)" [(ngModel)]="product.izdvojen" type="checkbox" value="{{product.izdvojen}}"></td>
+                <td class="align-middle"><input class="ml-4" (change)="new(product)" [(ngModel)]="product.novo" type="checkbox" value="{{product.novo}}"></td>
+                <td class="align-middle"><input class="ml-4" (change)="sale(product)" [(ngModel)]="product.sale" type="checkbox" value="{{product.sale}}"></td>
+                <td class="align-middle">
+                  <button
+                    [routerLink]="['edit', product.id]"
+                    class="btn btn-warning"
+                  >
+                  Izmjeni
+                  </button>
+                </td>
+                <td class="align-middle">
+                  <button
+                    (click)="deleteProduct(product.id)"
+                    class="btn btn-danger"
+                  >
+                    Obriši
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex justify-content-center" *ngIf="totalCount > 0">
+          <app-pager
+            [pageSize]="shopParams.pageSize"
+            [pageNumber]="shopParams.pageNumber"
+            [totalCount]="totalCount"
+            (pageChanged)="onPageChanged($event)"
+          ></app-pager>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

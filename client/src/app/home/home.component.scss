@@ -1,0 +1,113 @@
+
+.proizvodi{
+    height: 100px;
+    margin-top: 70px;
+    
+}
+.shopnow{
+    height: 700px;
+    width:auto;
+    background-image: url("../../assets/images/gopro naslovna.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.izdvojeno {
+    height: 700px;
+    width: 80%;
+    margin-left: 10%;
+    
+}
+img {
+    object-fit: cover;
+    height: 600px;
+    
+}
+.novo{
+    height: auto;
+    width: 100%;
+}
+.baner{
+    height: auto;
+    margin: 10%;
+}
+// Extra small devices (portrait phones, less than 477px)
+@media (max-width: 477.98px) { 
+    .proizvodi{
+        margin-top:0px;
+        height: 50px;
+    }
+    .shopnow{
+        height: 300px;
+    }
+    
+    .izdvojeno{
+        height: auto;
+    }
+    .novo{
+        height: auto;
+    }
+    .dno{
+        height: auto;
+    }
+}
+
+// Small devices (landscape phones, 477px and up)
+@media (min-width: 477px) and (max-width: 767.98px) { 
+    .proizvodi{
+     margin-top:10px;
+    height: auto;}
+    
+    .shopnow{
+        width:100%;
+        height: auto;
+        margin-top: 2%;
+    }
+    .izdvojeno{
+        height: auto;
+    }
+    .novo{
+        margin-top: 5%;
+    }
+}
+    
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .proizvodi{
+        margin-top:10px;
+       height: auto;}
+       
+       .shopnow{
+           width:100%;
+           height: auto;
+           margin-top: 2%;
+       }
+       .izdvojeno{
+        height: auto;
+        }
+        .novo{
+            height: auto;
+        }
+   
+
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .izdvojeno{
+        height: auto;
+    }
+    .novo{
+        height: auto;
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    .izdvojeno{
+        height: auto;
+    .novo{
+        height: auto;
+      
+    }
+}}

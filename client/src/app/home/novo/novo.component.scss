@@ -1,0 +1,188 @@
+.full-width-div{
+    height:auto;
+    background-color: rgb(233, 229, 229);
+}
+h1{
+    
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    font-weight: 300;
+}
+
+
+#novo{
+    background-color: rgb(252, 0, 0);
+    color: white;
+    text-align: center;
+    margin-left: 70%;
+}
+#naziv{
+    margin-top: 10%;
+    text-align: center;
+    transition: transform .2s;
+}
+#naziv:hover{
+  transform:scale(1.2);
+}
+a{
+  color: black;
+}
+a:hover{
+  color: rgba(77, 77, 88, 0.555);
+  text-decoration: none;
+}
+#cijena{
+  margin-top: 2%;
+    text-align: center;
+    font-size: 180%;
+    font-style:inherit;
+    font-weight: 600;
+    color:#008cba;
+    
+}
+img{
+      max-height: 450px;
+      height: 450px;
+      max-width: 450px;
+      width: 450px; 
+      object-fit: cover;
+      background-color: white;
+  }
+
+ @media (max-width: 437px){
+  img{
+    max-height: 250px;
+    height: 150px;
+    max-width: 250px;
+    width: 150px; 
+    object-fit: cover;
+    background-color: white;
+  }
+  #cijena{
+    font-size: 120%;}
+  #novo{
+    font-size: x-small;
+  }
+
+ } 
+// Extra small devices (portrait phones, less than 477px)
+@media (min-width: 437px) and(max-width: 477.98px) { 
+  #cijena{
+    margin-top:0%;
+    text-align: center;
+    font-size: 100%;
+    font-style:inherit;
+    font-weight: 600;
+    color:#008cba;
+}
+#novo{
+  margin-bottom: 0%;
+  margin-top: 10%;
+  margin-left: 70%;
+  font-size: small;}
+ 
+
+img{
+  max-height: 250px;
+  height: 200px;
+  max-width: 250px;
+  width: 220px; 
+  object-fit: cover;
+  background-color: white;
+}
+}
+
+// Small devices (landscape phones, 477px and up)
+@media (min-width: 477px) and (max-width: 552px) {
+  #cijena{
+    margin-top:0%;
+    text-align: center;
+    font-size: 130%;
+    font-style:inherit;
+    font-weight: 600;
+    color:#008cba;
+}
+#novo{
+  margin-bottom: 0%;
+  margin-top: 10%;
+  //margin-left: 50%;
+  font-size: small;}
+ 
+
+img{
+  max-height: 250px;
+  height: 250px;
+  max-width: 250px;
+  width: 250px; 
+  object-fit: cover;
+  background-color: white;
+}
+}
+@media (min-width: 553px) and (max-width: 767px) {
+  #cijena{
+    margin-top:0%;
+    text-align: center;
+    font-size: 130%;
+    font-style:inherit;
+    font-weight: 600;
+    color:#008cba;
+}
+#novo{
+  margin-bottom: 0%;
+  margin-top: 10%;
+  //margin-left: 50%;
+  font-size: medium;}
+ 
+
+img{
+  max-height: 350px;
+  height: 300px;
+  max-width: 450px;
+  width: 400px; 
+  object-fit: cover;
+  background-color: white;
+}
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  #novo{
+    margin-bottom: 0%;}
+    #cijena{
+      margin-top:10%;}
+    img{
+        max-height: 200px;
+        height: 200px;
+        max-width: 350px;
+        width: 350px; 
+        object-fit: cover;
+        background-color: white;
+      }
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+  img{
+    max-height: 300px;
+    height: 200px;
+    max-width: 300px;
+    width: 200px; 
+    object-fit: cover;
+    background-color: white;
+  }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+  img{
+    max-height: 450px;
+    height: 400px;
+    max-width: 450px;
+    width: 440px; 
+    object-fit: cover;
+    background-color: white;
+  }
+ }
+
+

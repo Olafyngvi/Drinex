@@ -1,0 +1,6 @@
+<div class="container mt-5">
+    <div><i class="fa fa-check-circle fa-5x" style="color: green;"></i></div>
+    <h2>Hvala vam. Vaša narudžba je potvrđena</h2>
+    <button *ngIf="order" routerLink="/orders/{{order?.id}}" class="btn btn-outline-success">Pogledajte Vašu narudžbu</button>
+    <button *ngIf="!order" routerLink="/orders" class="btn btn-outline-success">Pogledajte Vaše narudžbe</button>
+</div>

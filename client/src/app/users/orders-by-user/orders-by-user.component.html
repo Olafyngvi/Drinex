@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row">
+      <div *ngIf="ordersCount > 0" class="col-12">
+          <table class="table table-hover" style="cursor: pointer;">
+              <thead class="thead-light">
+                  <tr>
+                      <th>Narudžba</th>
+                      <th>Datum</th>
+                      <th>Ukupno</th>
+                      <th>Status</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let order of orders" routerLink="/orders/{{order.id}}">
+                      <th># {{order.id}}</th>
+                      <td>{{order.orderDate | date: 'medium'}}</td>
+                      <td>{{order.total | currency}}</td>
+                      <td>{{order.status}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div *ngIf="ordersCount === 0" class="col-12">
+        Nema narudžbi
+      </div>
+  </div>
+</div>

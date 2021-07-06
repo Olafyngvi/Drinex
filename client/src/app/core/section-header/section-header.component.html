@@ -1,0 +1,12 @@
+<ng-container *ngIf="(breadcrumb$ | async) as breadcrumbs" >
+    <section *ngIf="breadcrumbs.length > 0 && breadcrumbs[breadcrumbs.length-1].label !== 'Početna'" class="py-2" id="section" style="background-color: #f5f5f5;">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+
+                <div class="col-6">
+                    <xng-breadcrumb></xng-breadcrumb>
+                </div>
+            </div>
+        </div>
+    </section>
+</ng-container>

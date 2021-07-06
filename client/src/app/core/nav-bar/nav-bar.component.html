@@ -1,0 +1,123 @@
+<header
+  class="header"
+>
+  <nav class="navbar navbar-inverse" style="font-size: larger">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img class="navbar-brand"
+          src="/assets/images/Drinex_logo.png"
+          style="max-height: 70px"
+          alt="logo"
+          class="logo"
+          routerLink="/"
+        />
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a
+          class="p-2"
+          [routerLink]="['/']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }" >Početna</a>
+         <a class="p-2" routerLink="/shop" routerLinkActive="active">Prodavnica</a>
+        <a class="p-2" routerLink="/servis" routerLinkActive="active">Servis</a>
+        <a class="p-2" routerLink="/contact" routerLinkActive="active">Kontakt</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li id="ikone"> <a routerLink="/basket" class="position-relative">
+          <i class="fa fa-shopping-cart fa-2x"></i>
+          <i class="cart-no" *ngIf="basket$ | async as basket">
+             {{ basket.items.length }}
+          </i>
+        </a>
+           <ng-container *ngIf="(currentUser$ | async) === null">
+          <a
+            class="login"
+            routerLink="/account/login"
+            href="#"> <i class="fa fa-user"></i>Prijavi se</a>
+          <a
+            class="register"
+            routerLink="/account/register"
+            href="#"> <i class="fa fa-key"></i>Registracija</a>
+
+           </ng-container>
+           </li>
+        </ul>
+
+    </div>
+
+    <a
+      *ngIf="isAdmin$ | async"
+      class="p-2"
+      routerLink="/admin"
+      routerLinkActive="active"
+      >Admin</a
+    >
+  </nav>
+
+
+
+  <div class="d-flex align-items-center">
+
+    <ng-container *ngIf="currentUser$ | async as user">
+      <div class="btn-group ml-4" dropdown>
+        <a class="dropdown-toggle" style="cursor: pointer" dropdownToggle>
+          <strong>Dobro došao {{ (currentUser$ | async).displayName}}</strong>
+        </a>
+
+        <div
+          class="dropdown-menu"
+          style="cursor: pointer"
+          *dropdownMenu
+        >
+          <a
+            routerLink="/account/loggedresetpassword/{{(currentUser$ | async).email}}"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+            <i class="fa fa-unlock mr-3"></i> Ponovno postavi lozinku
+          </a>
+          <a
+            routerLink="/basket"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+            <i class="fa fa-shopping-cart mr-3"></i> Pregledaj korpu
+          </a>
+          <a
+            routerLink="/orders"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+            <i class="fa fa-history mr-3"></i> Pregledaj svoje narudžbe
+          </a>
+          <a
+            *ngIf="isAdmin$ | async"
+            routerLink="/orders/all"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+            <i class="fa fa-address-card mr-3"></i> Pregledaj sve narudžbe
+          </a>
+          <a
+            *ngIf="isAdmin$ | async"
+            routerLink="/users"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+          <i class="fa fa-users mr-3"></i>Pregledaj sve korisnike
+          </a>
+          <a
+            *ngIf="isAdmin$ | async"
+            routerLink="admin/carousel"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+          <i class="fa fa-image mr-3"></i>Galerija
+          </a>
+          <div class="dropdown-divider"></div>
+          <a
+            (click)="logout()"
+            class="dropdown-item d-flex align-items-center py-2"
+          >
+            <i class="fa fa-sign-out mr-3"></i> Odjavi se
+          </a>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</header>

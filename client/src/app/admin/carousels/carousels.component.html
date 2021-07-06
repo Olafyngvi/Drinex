@@ -1,0 +1,54 @@
+<div class="container py-5 my-5">
+  <div *ngIf="!addPhotoMode" class="row">
+    <div class="row">
+      <div class="col-3">
+        <button class="btn btn-primary mb-3" (click)="addPhotoModeToggle()">
+          Dodaj novu sliku
+        </button>
+      </div>
+    </div>
+    <div class="col-3" *ngFor="let carousel of carousels">
+      <div class="card">
+        <img
+          class="card-img-top"
+          width="100%"
+          height="225"
+          src="{{ carousel.pictureUrl }}"
+          alt="{{ carousel.fileName }}"
+        />
+        <div class="btn-group" style="width: 100%">
+          <button
+            (click)="deletePhoto(carousel.id)"
+            type="button"
+            class="btn btn-outline-danger"
+            style="width: 50%"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="addPhotoMode">
+    <div class="d-flex justify-content-between mb-3">
+      <h3 class="text-primary">Dodavanje nove slike</h3>
+      <button
+        class="btn btn-outline-secondary"
+        (click)="addPhotoModeToggle()"
+      >
+        Odustani
+      </button>
+    </div>
+    <div class="progress form-group" *ngIf="progress > 0">
+      <div
+        class="progress-bar progress-bar-striped bg-success"
+        role="progressbar"
+        [style.width.%]="progress"
+      >
+        {{ progress }}%
+      </div>
+    </div>
+    <app-photo-widget (addFile)="uploadFile($event)"></app-photo-widget>
+  </ng-container>
+
+</div>

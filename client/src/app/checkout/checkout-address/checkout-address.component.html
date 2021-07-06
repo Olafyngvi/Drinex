@@ -1,0 +1,52 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4>Podaci za dostavu</h4>
+        <button
+            (click)="addUserAddress()"
+            class="btn btn-outline-success mb-3"
+
+        >
+            Dodaj novu adresu
+        </button>
+        <button
+            (click)="saveUserAddress()"
+            class="btn btn-outline-success mb-3"
+            [disabled]="!checkoutForm.get('addressForm').valid || !checkoutForm.get('addressForm').dirty"
+        >
+            Sačuvaj kao standardnu
+        </button>
+    </div>
+    <div class="row" formGroupName="addressForm">
+        <div class="form-group col-6">
+            <app-text-input [label]="'Ime'" formControlName="firstName"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Prezime'" formControlName="lastName"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Adresa'" formControlName="street"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Grad'" formControlName="city"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Država'" formControlName="state"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+            <app-text-input [label]="'Poštanski broj'" formControlName="zipCode"></app-text-input>
+        </div>
+        <div class="form-group col-6">
+          <app-text-input [label]="'Telefon'" formControlName="phone"></app-text-input>
+      </div>
+    </div>
+</div>
+
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" routerLink="/basket">
+        <i class="fa fa-angle-left"></i> Povratak u korpu
+    </button>
+    <button [disabled]="checkoutForm.get('addressForm').invalid" class="btn btn-primary" cdkStepperNext>
+        Idite na dostavu <i class="fa fa-angle-right"></i>
+    </button>
+</div>
+

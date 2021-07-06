@@ -1,0 +1,16 @@
+<div class="mt-4" [formGroup]="checkoutForm">
+    <h4 class="mb-3">Dostava</h4>
+    <div class="container mb-4" formGroupName="deliveryForm">
+        <p>Dostava narudžbe se vrši u roku od 24h/48h</p>
+        <p>Plaćanje narudžbe se vrši pri preuzimanju</p>
+    </div>
+</div>
+
+<div class="float-none d-flex justify-content-between flex-column flex-lg-row mb-5">
+    <button class="btn btn-outline-primary" cdkStepperPrevious>
+        <i class="fa fa-angle-left"></i> Povratak na adresu
+    </button>
+    <button (click)="setShippingPrice()" class="btn btn-primary" cdkStepperNext>
+        Naredni korak <i class="fa fa-angle-right"></i>
+    </button>
+</div>

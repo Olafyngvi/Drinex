@@ -1,0 +1,38 @@
+
+  <div class="full-width-div mt-4 mb-5 pb-4" style="background-color:rgb(233, 229, 229);">
+    <hr>
+    <h1>SNIŽENI ARTIKLI</h1>
+    <hr>
+<div class="container-fluid">
+    <div class="d-flex justify-content-center row align-items-center">
+        <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-sm-4 col-12 align-items-center" style="background-color: white; margin:2px; width: 90%;">
+         <img class="img-fluid" src="{{product.pictureUrl}}" alt="{{product.name}}" style="width:100%">
+         <a routerLink="shop/{{product.id}}"><div id="naziv">{{product.name}}</div></a>
+             <div id="cijena">
+                 <h6>{{product.oldPrice | currency: 'KM':'symbol':undefined:'fr'}}</h6>
+                 <h5>{{product.price | currency: 'KM':'symbol':undefined:'fr'}}</h5>
+             </div>
+             <button (click)="addItemToBasket(product)">Dodaj u korpu</button>
+         </div>
+
+        <!--<div class="col-lg-3 col-md-4 col-sm-4 col-12 align-items-center" style="background-color: white;  margin:2px; width: 90%;">
+            <img src="../../../assets/images/tv.jfif" alt="Trulli" style="width:100%">
+            <a href="shop/8"><div id="naziv">Fig.1 - Trulli, Puglia, Italy.</div></a>
+             <div id="cijena">
+                 <h6>699,99KM</h6>
+                 <h5>600,00KM</h5>
+             </div>
+             <button>Dodaj u korpu</button>
+         </div>
+         <div class="col-lg-3 col-md-4 col-sm-4 col-12 align-items-center" style="background-color: white; margin:2px; width: 90%;">
+             <img src="../../../assets/images/tv.jfif" alt="Trulli" style="width:100%">
+             <a href="shop/8"><div id="naziv">Fig.1 - Trulli, Puglia, Italy.</div></a>
+             <div id="cijena">
+                 <h6>699,99KM</h6>
+                 <h5>600,00KM</h5>
+                </div>
+                <button>Dodaj u korpu</button>
+            </div>-->
+    </div>
+ </div>
+</div>

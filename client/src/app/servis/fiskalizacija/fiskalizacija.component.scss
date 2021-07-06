@@ -1,0 +1,91 @@
+// Extra small devices (portrait phones, less than 477px)
+@media (max-width: 477.98px) { 
+   .col-12{
+       text-align: center;
+   }
+   #opis{
+       text-align: center;
+   }
+   h5{
+       font-weight: 200;
+   }
+   h6{
+       font-weight: 300;
+   }
+}
+
+// Small devices (landscape phones, 477px and up)
+@media (min-width: 477px) and (max-width: 767.98px) {
+   
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .col-12{
+        padding: 2%;
+    }
+    img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+    hr{
+        visibility: hidden;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    hr{
+        visibility: hidden;
+    }
+   
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    hr{
+    visibility: hidden;}
+    h5{
+        font-size:xx-large;
+    }
+    h6{
+        font-size: x-large;
+    }
+    i{
+        font-size: larger;
+    }
+ }
+
+ #naslov{
+     color:rgb(100, 206, 255);
+     font-weight: 400;
+     font-weight: bold;
+     margin-top: 2%;
+ }
+ p{
+     font-weight: 200;
+ }
+ .cijena{
+     background-color:rgb(182, 232, 255);
+     color: white;
+     width: 50%;
+     margin-left: 25%;
+     margin-top:2%;
+    
+ }
+ 
+ .container{
+     background-color: rgb(240, 240, 240);
+ }
+ .col-12{
+    text-align: center;
+}
+#opis{
+    text-align: center;
+}
+h5{
+    font-weight: 200;
+}
+h6{
+    font-weight: 300;
+}

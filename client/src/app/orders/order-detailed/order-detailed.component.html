@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row" *ngIf="order">
+    <div class="col-8">
+      <app-basket-summary
+        [items]="order.orderItems"
+        [isBasket]="false"
+        [isOrder]="true"
+    ></app-basket-summary>
+    <hr>
+    <div _ngcontent-plv-c74="" class="bg-light px-3 text-uppercase font-weight-bold" style="padding: 1.10em;">Podaci o korisniku
+    </div>
+    <hr>
+      <div class="row">
+        <div class="col-3">
+          <ul class="list-unstyled">
+           <strong> <li class="text-muted">Ime i Prezime:</li></strong>
+           <strong> <li class="text-muted">Adresa:</li></strong>
+           <strong> <li class="text-muted">Grad:</li></strong>
+           <strong> <li class="text-muted">Zip:</li></strong>
+           <strong> <li class="text-muted">Država:</li></strong>
+          </ul>
+        </div>
+        <div class="col-4">
+          <ul class="list-unstyled">
+            <strong><li>{{order.shipToAddress.firstName}} {{order.shipToAddress.lastName}}</li></strong>
+            <strong><li>{{order.shipToAddress.street}}</li></strong>
+            <strong><li>{{order.shipToAddress.city}}</li></strong>
+            <strong><li>{{order.shipToAddress.zipCode}}</li></strong>
+            <strong><li>{{order.shipToAddress.state}}</li></strong>
+          </ul>
+        </div>
+      </div>
+      <br>
+      <div *ngIf="isAdmin$ | async">
+        <button *ngIf="order.status === 'Pending'" (click)="setShipped(order.id)" class="btn btn-primary">Pošalji</button>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-order-totals
+        [shippingPrice]="order.shippingPrice"
+        [subtotal]="order.subtotal"
+        [total]="order.total"
+      ></app-order-totals>
+    </div>
+  </div>
+
+</div>

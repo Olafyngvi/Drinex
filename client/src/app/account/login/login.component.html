@@ -1,0 +1,99 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-3">
+    <div *ngIf="showError" class="alert alert-danger" role="alert">
+      {{errorMessage}}
+  </div>
+    <div *ngIf="!user">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="text-center mb-4">
+          <h1 class="h3 mb-3 font-weight-normal">PRIJAVA</h1>
+        </div>
+
+        <app-text-input
+          formControlName="email"
+          [label]="'E-mail adresa'"
+        ></app-text-input>
+        <app-text-input
+          formControlName="password"
+          [label]="'Lozinka'"
+          [type]="'password'"
+        ></app-text-input>
+
+        <button
+          [disabled]="loginForm.invalid"
+          class="btn btn-lg btn-primary btn-block"
+          type="submit"
+        >
+          Prijavi se
+        </button>
+      </form>
+      <hr />
+      <div class="forma1" style="padding-left: 35%">
+        <p style="text-decoration: solid">
+          Nemaš račun!?
+          <a routerLink="/account/register" href="#"> Registruj se</a>
+        </p>
+        <p style="text-decoration: solid">
+          <a routerLink="/account/forgotpassword" href="#">Zaboravljena lozinka</a>
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div *ngIf="!user" class="card text-center">
+      <div style="cursor: pointer;" class="google-btn">
+        <div class="google-icon-wrapper">
+          <img
+            class="google-icon"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+          />
+        </div>
+        <p class="btn-text" (click)="signInWithGoogle()">
+          <b>Koristi Google račun</b>
+        </p>
+      </div>
+    </div>
+    <div *ngIf="user" class="container text-center">
+      <img
+        src="{{ user.photoUrl }}"
+        width="300"
+        height="300"
+        class="card-img-top img-responsive photo"
+      />
+      <div class="card-block">
+        <h4 class="card-title">{{ user.name }}</h4>
+        <p class="card-text">{{ user.email }}</p>
+      </div>
+
+      <br />
+      <!--<form [formGroup]="registerForm" (ngSubmit)="OnSubmit()">
+        <app-text-input
+          formControlName="displayName"
+          [label]="'Display Name'"
+        ></app-text-input>
+        <app-text-input
+          formControlName="email"
+          [label]="'Email address'"
+        ></app-text-input>
+        <app-text-input
+          formControlName="password"
+          [label]="'Password'"
+          [type]="'password'"
+        ></app-text-input>
+
+        <ul class="text-danger list-unstyled" *ngIf="errors">
+          <li *ngFor="let error of errors">
+            {{ error }}
+          </li>
+        </ul>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Submit
+        </button>
+      </form>
+      <br />
+      <button class="btn btn-lg btn-primary btn-block" (click)="signOut()">
+        Odjavi se
+      </button>-->
+    </div>
+  </div>
+</div>

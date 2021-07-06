@@ -1,0 +1,28 @@
+<div class="container-fluid">
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+        <button class="btn btn-primary proizvodi" (click)="isOpen = !isOpen"><i class="fa fa-bars"></i>
+           <span id="ime"> PROIZVODI</span>
+          </button>
+          <ul class="list-group" *ngIf="isOpen">
+            <a *ngFor="let type of types" (click)="kategorije(type.id)"><li class="list-group-item">{{type.name}}</li></a>
+            <a routerLink="/servis"><li class="list-group-item">Servis</li></a>
+            <a><li class="list-group-item">Ne znam</li></a>
+        </ul>
+    </div>
+    <div class="col-lg-10 col-md-10 col-sm-9 col-8" style="width: 100%;">
+        <div class="row" id="red">
+        <div class="col-lg-11 col-md-11 col-sm-8 col-10" style="padding: 0%;">
+            <input type="text" [(ngModel)]="searchInput" placeholder="Unesite pojam" />
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-2 col-2 " style="padding: 0%;">
+            <button (click)="search()"  class="btn btn-primary drugi">
+            <i class="fa fa-search"></i>
+            </button>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
+

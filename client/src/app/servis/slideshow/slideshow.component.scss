@@ -1,0 +1,116 @@
+/* Centered text */
+.centered {
+    position: absolute;
+    text-align: center;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+h4{
+    color:mintcream;
+    text-transform: uppercase;
+    font-weight:bold;
+}
+#drugi{
+    color:rgba(64, 177, 252, 0.959);
+    font-weight: bolder;
+}
+
+
+// Extra small devices (portrait phones, less than 477px)
+@media (max-width: 477.98px) { 
+    img{
+        max-height: 400px;
+        height: auto;
+        max-width: 500px;
+        width: 100%; 
+        object-fit:cover;
+    }
+    h4{
+        font-size: medium;
+    }
+   
+}
+
+// Small devices (landscape phones, 477px and up)
+@media (min-width: 477px) and (max-width: 767.98px) {
+    img{
+    
+        max-width: 800px;
+        max-height: 800px;
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    img{
+        max-width: 1000px;
+        max-height: 1000px;
+    }
+    .centered {
+        position: absolute;
+        text-align: center;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h4{
+        color:mintcream;
+        text-transform: uppercase;
+        font-weight:bold;
+        font-size: 250%;
+    }
+    #drugi{
+        color:rgba(64, 177, 252, 0.959);
+        font-weight: bolder;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    img{
+        width: 100%;
+    }
+    .centered {
+        position: absolute;
+        text-align: center;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h4{
+        color:mintcream;
+        text-transform: uppercase;
+        font-weight:bold;
+        font-size: 250%;
+    }
+    #drugi{
+        color:rgba(64, 177, 252, 0.959);
+        font-weight: bolder;
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    img{
+        width: 100%;
+        max-height:900px;
+    }
+    .centered {
+        position: absolute;
+        text-align: center;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    h4{
+        color:mintcream;
+        text-transform: uppercase;
+        font-weight:bold;
+        font-size: 300%;
+    }
+    #drugi{
+        color:rgba(64, 177, 252, 0.959);
+        font-weight: bolder;
+    }
+ }

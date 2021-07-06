@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <h4>Interna greška servera - osvježavanjem stranice učinit će da izuzetak nestane</h4>
+    <ng-container *ngIf="error">
+        <h5 class="text-danger">Error: {{error.message}}</h5>
+        <p class="font-weight-bold">Napomena: ako vidite ovo, Angular vjerovatno nije odgovoran</p>
+        <p>Šta dalje?</p>
+        <ol>
+            <li>Otvorite chrome dev alate</li>
+            <li>Pregledajte karticu mreže</li>
+            <li>Provjerite neuspjeli zahtjev</li>
+            <li>Ispitajte URL ovog zahtjeva - provjerite je li to tačno</li>
+            <li>Reproducirajte grešku u poštaru - ako dobijemo isti odgovor kod poštara, onda problem NIJE
+                ugaona</li>
+        </ol>
+        <p>Slijedi trag steka - ovdje bi trebala započeti vaša istraga!</p>
+        <code class="mt-5" style="background-color: whitesmoke;">{{error.details}}</code>
+    </ng-container>
+</div>

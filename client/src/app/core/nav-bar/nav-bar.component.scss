@@ -1,0 +1,139 @@
+.fa.fa-user{
+    visibility: hidden;
+}
+.fa.fa-key{
+    visibility: hidden;
+}
+
+
+
+header{
+    margin-left: 0;
+    margin-right: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: auto;
+}
+
+
+
+.fa{
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(101, 193, 247);
+  }
+a {
+    text-decoration: none;
+    color: #343a40;
+
+    &.active {
+        color: #65c1f7;
+        font-weight: 400;
+    }
+}
+
+.logo {
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.dropdown-menu{
+    position: relative;
+
+}
+.cart-no {
+  font-size: 12px;
+  background: #99bc60;
+  color: #fff;
+  padding: 0 5px;
+  vertical-align: top;
+}
+
+/* mali tablet - veliki tablet: od 768px do 1023px; */
+@media only screen and (max-width: 1023px) {
+    header{overflow-x: hidden;}
+    .logo{
+        height: 40px;
+    }
+    .login, .register{
+        visibility: hidden;
+    }
+     .fa.fa-user, .fa.fa-key{
+        visibility:visible;
+        font-size: 26px;
+
+    }
+    .fa-key{
+        margin-left:-30px;
+    }
+    .fa-user{
+        margin-left:15px;
+    }
+
+}
+// Extra small devices (portrait phones, less than 477px)
+@media (max-width: 477.98px) {
+ .navbar-header{
+     width: 100%;
+ }
+ .logo{
+     margin-left: 35%;
+     margin-bottom:2% ;
+ }
+ .container-fluid{
+     justify-content: center;
+ }
+ #ikone{
+     margin-left: 10%;
+ }
+
+
+
+}
+// Small devices (landscape phones, 477px and up)
+@media (min-width: 477px) and (max-width: 767.98px) {
+    header{
+        font-size:13px;
+    }
+    .logo{
+        height: 20px;
+    }
+
+    .fa.fa-user, .fa.fa-key,.fa-shopping-cart{
+        visibility:visible;
+        font-size: 20px;
+    }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    header{overflow-x: hidden;}
+    .logo{
+        height: 40px;
+    }
+    .login, .register{
+        visibility: hidden;
+    }
+     .fa.fa-user, .fa.fa-key{
+        visibility:visible;
+        font-size: 26px;
+
+    }
+    .fa-key{
+        margin-left:-30px;
+    }
+    .fa-user{
+        margin-left:15px;
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+//@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+//@media (min-width: 1200px) { ... }

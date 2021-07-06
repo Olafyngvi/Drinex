@@ -1,0 +1,36 @@
+ <div class="full-width-div mt-4 mb-4 pb-4">
+        <h1>NOVO U PONUDI</h1>
+        <hr>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-center row align-items-center">
+
+            <div *ngFor="let product of products" class="col-lg-3 col-md-3 col-sm-5 col-6">
+             <div id="novo">NOVO</div>
+             <img src="{{product.pictureUrl}}" alt="{{product.name}}" style="width:100%">
+             <a routerLink="shop/{{product.id}}"><div id="naziv">{{product.name}}</div></a>
+             <div id="cijena">{{product.price | currency: 'KM':'symbol':undefined:'fr'}}</div>
+            </div>
+
+            <!--<div class="col-lg-3 col-md-3 col-sm-5 col-6 ">
+                <div id="novo">NOVO</div>
+                <img src="../../../assets/images/foto.jpg" alt="Trulli" style="width:100%">
+                <a routerLink="shop/8"><div id="naziv">Fig.1 - Trulli, Puglia, Italy.</div></a>
+                <div id="cijena">850,00 KM</div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-5 col-6 ">
+                <div id="novo">NOVO</div>
+                <img src="../../../assets/images/foto.jpg" alt="Trulli" style="width:100%">
+                <a routerLink="shop/8"><div id="naziv">Fig.1 - Trulli, Puglia, Italy.</div></a>
+                <div id="cijena">850,00 KM</div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-5 col-6">
+                <div id="novo">NOVO</div>
+                <img src="../../../assets/images/foto.jpg" alt="Trulli" style="width:100%">
+                <a routerLink="shop/8"><div id="naziv">Fig.1 - Trulli, Puglia, Italy.</div></a>
+                <div id="cijena">850,00 KM</div>
+            </div>-->
+        </div>
+    </div>
+</div>

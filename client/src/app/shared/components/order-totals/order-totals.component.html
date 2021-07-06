@@ -1,0 +1,20 @@
+<div class="bg-light px-4 text-uppercase font-weight-bold" style="padding: 1.20em;">
+    Detalji narudžbe
+</div>
+<div class="p-4">
+    <p class="font-italic mb-4">Troškovi dostave zavise od ukupne cijene svih proizvoda narudžbe</p>
+    <ul class="list-unstyled mb-4">
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Proizvodi</strong>
+            <strong>{{subtotal | currency: 'KM':'symbol':undefined:'fr'}}</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Dostava</strong>
+            <strong>{{shippingPrice | currency: 'KM':'symbol':undefined:'fr'}}</strong>
+        </li>
+        <li class="d-flex justify-content-between py-3 border-bottom">
+            <strong class="text-muted">Ukupno</strong>
+            <strong>{{total | currency: 'KM':'symbol':undefined:'fr'}}</strong>
+        </li>
+    </ul>
+</div>
